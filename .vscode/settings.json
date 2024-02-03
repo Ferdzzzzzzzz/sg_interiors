@@ -1,0 +1,33 @@
+{
+    "editor.rulers": [
+        100
+    ],
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "files.exclude": {
+        ".gitignore": false,
+        ".dockerignore": false,
+        "**/coverage": false,
+        "go.sum": false,
+        "go.mod": false,
+        "**/*_templ.go": true
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#ff4081"
+    },
+    "html.format.wrapAttributes": "force-expand-multiline",
+    "html.format.templating": true,
+    "tailwindCSS.includeLanguages": {
+        "templ": "html"
+    }
+}

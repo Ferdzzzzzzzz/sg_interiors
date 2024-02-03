@@ -1,5 +1,33 @@
 package layout
 
+var (
+	navItems = []struct {
+		Title string
+		Href  string
+	}{
+		{
+			Title: "Home",
+			Href:  "/",
+		},
+		{
+			Title: "about",
+			Href:  "/about",
+		},
+		{
+			Title: "Portfolio",
+			Href:  "/portfolio",
+		},
+		{
+			Title: "Gallery",
+			Href:  "/gallery",
+		},
+		{
+			Title: "Contact",
+			Href:  "/contact",
+		},
+	}
+)
+
 templ Page(title string, description string) {
 	<!DOCTYPE html>
 	<html
@@ -8,6 +36,22 @@ templ Page(title string, description string) {
 	>
 		@Head(title, description)
 		<body>
+			<nav class="max-w-7xl mx-auto border-b-2">
+				<ul
+ 					class="flex justify-between"
+				>
+					for _, nav := range navItems {
+						<li>
+							<a
+ 								class="text-4xl"
+ 								href={ templ.SafeURL(nav.Href) }
+							>
+								{ nav.Title }
+							</a>
+						</li>
+					}
+				</ul>
+			</nav>
 			{ children... }
 		</body>
 		<footer>

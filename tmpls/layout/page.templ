@@ -6,23 +6,23 @@ var (
 		Href  string
 	}{
 		{
-			Title: "Home",
+			Title: "HOME",
 			Href:  "/",
 		},
 		{
-			Title: "about",
+			Title: "ABOUT",
 			Href:  "/about",
 		},
 		{
-			Title: "Portfolio",
+			Title: "PORTFOLIO",
 			Href:  "/portfolio",
 		},
 		{
-			Title: "Gallery",
+			Title: "GALLERY",
 			Href:  "/gallery",
 		},
 		{
-			Title: "Contact",
+			Title: "CONTACT",
 			Href:  "/contact",
 		},
 	}
@@ -36,14 +36,14 @@ templ Page(title string, description string) {
 	>
 		@Head(title, description)
 		<body>
-			<nav class="max-w-7xl mx-auto border-b-2">
+			<nav class="max-w-7xl mx-auto border-b-2 border-primary-light py-6">
 				<ul
  					class="flex justify-between"
 				>
 					for _, nav := range navItems {
 						<li>
 							<a
- 								class="text-4xl"
+ 								class="font-serif text-xl text-primary-dark"
  								href={ templ.SafeURL(nav.Href) }
 							>
 								{ nav.Title }
@@ -77,5 +77,16 @@ templ Head(title string, description string) {
  			rel="stylesheet"
  			href="/assets/styles/main.css"
 		/>
+		<link
+ 			rel="preconnect"
+ 			href="https://fonts.googleapis.com"
+		/>
+		<link
+ 			rel="preconnect"
+ 			href="https://fonts.gstatic.com"
+ 			crossorigin
+		/>
+		<link href="https://fonts.googleapis.com/css2?family=Prata&amp;display=swap" rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
 	</head>
 }

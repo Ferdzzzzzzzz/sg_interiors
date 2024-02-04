@@ -4,6 +4,63 @@ import "sg/tmpls/layout"
 
 templ Home() {
 	@layout.Page("SG Interiors", "A Cape Town interior design studio passionate about making your home yours.") {
-		<h1 class="bg-amber-700">Home Page</h1>
+		@homeCTA()
+		@homeCosting()
 	}
+}
+
+templ homeCTA() {
+	<section>
+		<div class="text-center">
+			<img
+ 				class="inline"
+ 				src="/assets/elements/cta_logo.svg"
+ 				alt="SG Interiors Logo"
+			/>
+		</div>
+		<p
+ 			class="font-serif text-primary-dark text-center text-4xl"
+		>
+			Interior Design and Decorating
+		</p>
+		<div
+ 			class="text-center mt-10"
+		>
+			<a
+ 				href="/"
+ 				class="text-primary-dark border border-primary-md py-4 px-10 font-bold mt-10 tracking-widest"
+			>
+				LEARN MORE
+			</a>
+		</div>
+		<div class="text-center bg-primary-light mt-20 py-10">
+			<p class="font-serif text-primary-dark max-w-prose mx-auto text-2xl">
+				"Your home should tell the story of who you are, and be a collection of what you love." 
+				<br/>
+				- Nate Berkus
+			</p>
+		</div>
+	</section>
+}
+
+templ homeCosting() {
+	<section class="py-20">
+		<div class="max-w-5xl mx-auto border-t-2 border-primary-dark text-primary-dark text-center">
+			<h2
+ 				class="mt-10 font-serif text-4xl"
+			>
+				Costing
+			</h2>
+			<p
+ 				class="font-sans text-2xl mt-10 font-medium"
+			>
+				Your first consultation is <u>free</u>.
+			</p>
+			<p
+ 				class="font-sans text-2xl mt-4 font-medium"
+			>
+				At your first consultation, the project and budget will be discussed.
+			</p>
+		</div>
+	</section>
 }

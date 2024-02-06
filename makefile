@@ -12,3 +12,7 @@ style:
 build:
 	@tailwindcss -c ./tailwind.config.js -i ./in.css -o ./assets/styles/main.css --minify
 	@templ generate
+
+gen:
+	@tailwindcss -c ./tailwind.config.js -i ./in.css -o ./assets/styles/main.css
+	@templ generate

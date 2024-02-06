@@ -37,6 +37,10 @@ func Init(
 	app.HandleStd(http.MethodGet, "/assets/*", staticHandler.ServeHTTP)
 
 	app.Handle(http.MethodGet, "/", s.render(page.Home()))
+	app.Handle(http.MethodGet, "/about", s.render(page.About()))
+	app.Handle(http.MethodGet, "/portfolio", s.render(page.Portfolio()))
+	app.Handle(http.MethodGet, "/gallery", s.render(page.Gallery()))
+	app.Handle(http.MethodGet, "/contact", s.render(page.Contact()))
 
 	return app
 }

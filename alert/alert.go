@@ -8,19 +8,18 @@ import (
 )
 
 type Alerter interface {
-	Contact(name, email, org, message string) error
+	Contact(name, email, message string) error
 }
 
 type LogOnly struct{}
 
-func (t LogOnly) Contact(name, email, org, message string) error {
+func (t LogOnly) Contact(name, email, message string) error {
 	fmt.Printf(`
 name: %s, 
 email: %s, 
-org: %s, 
 message: %s
 
-`, name, email, org, message)
+`, name, email, message)
 
 	return nil
 }
@@ -41,18 +40,17 @@ func NewTelegramAlertBot(
 	return Bot{bot, l}, nil
 }
 
-var ferdz int64 = 638580175
-var stevo int64 = 933906334
+var steph int64 = 0000
+var ferdz int64 = 0000
 
-var numbers = []int64{ferdz, stevo}
+var numbers = []int64{ferdz, steph}
 
-func (a Bot) Contact(name, email, org, message string) error {
+func (a Bot) Contact(name, email, message string) error {
 	a.l.Println("sending alert to Telegram alert group")
 
 	msg := fmt.Sprintf(`name: %s, 
 email: %s, 
-org: %s, 
-message: %s`, name, email, org, message)
+message: %s`, name, email, message)
 
 	var maybeErr error
 	for _, n := range numbers {

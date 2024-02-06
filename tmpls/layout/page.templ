@@ -54,9 +54,7 @@ templ Page(title string, description string) {
 			</nav>
 			{ children... }
 		</body>
-		<footer>
-			Footer
-		</footer>
+		@footer()
 	</html>
 }
 
@@ -89,4 +87,77 @@ templ Head(title string, description string) {
 		<link href="https://fonts.googleapis.com/css2?family=Prata&amp;display=swap" rel="stylesheet"/>
 		<link href="https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
 	</head>
+}
+
+var projects = []struct {
+	Title string
+	Href  string
+}{
+	{
+		Title: "Palm Tree",
+		Href:  "",
+	},
+	{
+		Title: "Timeless Tranquility",
+		Href:  "",
+	},
+	{
+		Title: "Autumnal Harmony",
+		Href:  "",
+	},
+}
+
+templ footer() {
+	<footer class="bg-primary-light text-primary-dark py-20">
+		<div class="max-w-7xl mx-auto grid grid-cols-3">
+			<div>
+				<h2 class="font-serif text-xl">PROJECTS</h2>
+				<ul class="mt-10 space-y-4">
+					for _, project := range projects {
+						<li class="text-xl font-semibold">
+							<a href={ templ.SafeURL(project.Href) }>
+								{ project.Title }
+							</a>
+						</li>
+					}
+				</ul>
+			</div>
+			<div>
+				<ul class="mt-10 space-y-4">
+					<li class="text-xl font-semibold">
+						<a
+ 							href=""
+						>
+							<img
+ 								class="inline w-8 h-8 mr-2"
+ 								aria-hidden
+ 								src="/assets/elements/mail_icon.svg"
+							/>
+							steph@sginteriors.co.za
+						</a>
+					</li>
+					<li class="text-xl font-semibold">
+						<a
+ 							href=""
+ 							class="space-x-2"
+						>
+							<img
+ 								class="inline w-8 h-8 mr-2"
+ 								aria-hidden
+ 								src="/assets/elements/insta_icon.svg"
+							/>
+							sg_interiors_sa
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<img
+ 					class="inline w-56"
+ 					src="/assets/elements/cta_logo.svg"
+ 					alt="SG Interiors Logo"
+				/>
+			</div>
+		</div>
+	</footer>
 }

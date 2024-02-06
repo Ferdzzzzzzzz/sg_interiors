@@ -41,6 +41,7 @@ func run(l *log.Logger) error {
 
 	dev := flag.Bool("dev", false, "run application in dev mode")
 	port := flag.Uint("port", 4003, "overwrite the default port")
+	telegramApiToken := flag.String("tgBot", "", "provide a Telegram Bot API token")
 
 	flag.Parse()
 
@@ -53,12 +54,11 @@ func run(l *log.Logger) error {
 		alertBot = alert.LogOnly{}
 
 	} else {
-		telegramApiToken := os.Getenv("TELEGRAM_BOT_API_TOKEN")
-		if telegramApiToken == "" {
+		if *telegramApiToken == "" {
 			return errors.New("TELEGRAM_BOT_API_TOKEN key has not been set")
 		}
 
-		if bot, err := alert.NewTelegramAlertBot(telegramApiToken, l); err != nil {
+		if bot, err := alert.NewTelegramAlertBot(*telegramApiToken, l); err != nil {
 			return err
 		} else {
 			alertBot = bot

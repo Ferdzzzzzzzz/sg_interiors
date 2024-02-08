@@ -1,9 +1,146 @@
 package page
 
 import "sg/tmpls/layout"
+import "sg/core/form"
 
-templ Contact() {
+type ContactForm struct {
+	State form.State
+	Name  form.Field
+	Email form.Field
+	Msg   form.Field
+}
+
+templ Contact(state ContactForm) {
 	@layout.Page("Contact | SG Interiors Design Studio", "TODO") {
-		<h1>Contact</h1>
+		<section class="text-primary-dark max-w-7xl mx-auto pt-20 pb-20">
+			<h1 class="text-5xl font-serif">CONTACT US</h1>
+			<div class="grid grid-cols-2 pt-20">
+				@personalInfo()
+				@contactForm(state)
+			</div>
+		</section>
 	}
+}
+
+templ contactForm(state ContactForm) {
+	<div>
+		switch state.State {
+			case form.Initial:
+				<form
+ 					class="max-w-lg mx-auto"
+ 					method="POST"
+				>
+					<fieldset class="space-y-4">
+						<div>
+							<input
+ 								name="name"
+ 								type="text"
+ 								value={ state.Name.Val }
+ 								required
+ 								placeholder="First Name &amp; Surname"
+ 								class="rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-md py-2 px-4 text-xl block w-full"
+							/>
+							@errMsg(state.Name.Err)
+						</div>
+						<div>
+							<input
+ 								name="email"
+ 								type="email"
+ 								required
+ 								value={ state.Email.Val }
+ 								placeholder="Email Address"
+ 								class="rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-md py-2 px-4 text-xl block w-full"
+							/>
+							@errMsg(state.Email.Err)
+						</div>
+						<input
+ 							name="email_honey"
+ 							type="email"
+ 							class="hidden"
+						/>
+						<textarea
+ 							name="msg"
+ 							value={ state.Msg.Val }
+ 							placeholder="Message..."
+ 							class="rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-md py-2 px-4 text-xl block w-full"
+						></textarea>
+					</fieldset>
+					<button
+ 						type="submit"
+ 						class="rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-md py-2 px-4 text-xl block w-full mt-10 font-semibold"
+					>Send Message</button>
+				</form>
+			case form.Error:
+				<p class="text-primary-dark text-2xl">Something went wrong, please email me directly.</p>
+			case form.Success:
+				<p class="text-primary-dark text-2xl">We will be in contact soon!</p>
+		}
+	</div>
+}
+
+templ errMsg(msg string) {
+	<p class="text-warn font-semibold">
+		if msg != "" {
+			{ msg }
+		} else {
+			&nbsp;
+		}
+	</p>
+}
+
+templ personalInfo() {
+	<div>
+		<ul class="space-y-10">
+			<li class="text-xl font-semibold">
+				<a
+ 					href=""
+				>
+					<img
+ 						class="inline w-8 h-8 mr-2"
+ 						aria-hidden
+ 						src="/assets/elements/map_icon.svg"
+					/>
+					Constantia, Cape Town
+				</a>
+			</li>
+			<li class="text-xl font-semibold">
+				<a
+ 					href=""
+ 					class="space-x-2"
+				>
+					<img
+ 						class="inline w-8 h-8 mr-2"
+ 						aria-hidden
+ 						src="/assets/elements/phone_icon.svg"
+					/>
+					078 459 4774
+				</a>
+			</li>
+			<li class="text-xl font-semibold">
+				<a
+ 					href=""
+				>
+					<img
+ 						class="inline w-8 h-8 mr-2"
+ 						aria-hidden
+ 						src="/assets/elements/mail_icon.svg"
+					/>
+					steph@sginteriors.co.za
+				</a>
+			</li>
+			<li class="text-xl font-semibold">
+				<a
+ 					href=""
+ 					class="space-x-2"
+				>
+					<img
+ 						class="inline w-8 h-8 mr-2"
+ 						aria-hidden
+ 						src="/assets/elements/insta_icon.svg"
+					/>
+					sg_interiors_sa
+				</a>
+			</li>
+		</ul>
+	</div>
 }

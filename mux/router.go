@@ -4,7 +4,7 @@ import (
 	"io/fs"
 	"log"
 	"net/http"
-	"sg/alert"
+	"sg/core/alert"
 	"sg/tmpls/page"
 
 	"github.com/Rockup-Consulting/std/core/mid"
@@ -40,7 +40,8 @@ func Init(
 	app.Handle(http.MethodGet, "/about", s.render(page.About()))
 	app.Handle(http.MethodGet, "/portfolio", s.render(page.Portfolio()))
 	app.Handle(http.MethodGet, "/gallery", s.render(page.Gallery()))
-	app.Handle(http.MethodGet, "/contact", s.render(page.Contact()))
+	app.Handle(http.MethodGet, "/contact", s.render(page.Contact(page.ContactForm{})))
+	app.Handle(http.MethodPost, "/contact", s.contactAction)
 
 	return app
 }

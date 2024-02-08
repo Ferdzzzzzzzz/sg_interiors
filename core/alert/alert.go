@@ -40,8 +40,8 @@ func NewTelegramAlertBot(
 	return Bot{bot, l}, nil
 }
 
-var steph int64 = 0000
-var ferdz int64 = 0000
+var ferdz int64 = 638580175
+var steph int64 = 6276345756
 
 var numbers = []int64{ferdz, steph}
 

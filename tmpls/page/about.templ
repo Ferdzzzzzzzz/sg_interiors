@@ -4,6 +4,49 @@ import "sg/tmpls/layout"
 
 templ About() {
 	@layout.Page("About | SG Interiors Design Studio", "TODO") {
-		<h1>About</h1>
+		<section class="text-primary-dark max-w-7xl mx-auto pt-40 grid grid-cols-3 gap-20">
+			<div class="col-span-2">
+				<h1 class="text-5xl font-serif">ABOUT ME</h1>
+				<div class="space-y-8 text-2xl mt-10">
+					<p>
+						Hi, I’m Stephanie Grant, the face behind the designs and the heart behind the creativity at SG Interiors.
+					</p>
+					<p>
+						SG Interiors offers residential and commercial interior design and decorating. We pride ourselves on adaptability - making each project work for the client's needs and budget.
+					</p>
+					<p>
+						We can assist you with as much of the design journey as you would need us to. Whether it’s only requiring online consultations or full on-site visits and project management, we’re here to help.
+					</p>
+					<p>
+						Creating spaces that feel like a timeless reflection of your personality is always my number one priority - this is a space that you must feel most comfortable.
+					</p>
+					<p>
+						For me, interior design isn't just about aesthetics; it's about creating an environment each individual uniquely loves.
+					</p>
+				</div>
+			</div>
+			<div class="bg-primary-light w-full h-full">
+				<img
+ 					class="object-cover h-full w-full"
+ 					src="https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707417223/ferdz_private/Stephanie_Grant_jkjlw5.jpg"
+				/>
+			</div>
+		</section>
+		<section class="text-primary-dark py-40">
+			<div class={ "max-w-7xl mx-auto grid grid-cols-3 divide-x-2 [&_h2]:text-2xl [&_h2]:font-serif text-center [&_p]:text-xl [&_p]:mt-4 divide-primary-md" }>
+				<div class="px-8">
+					<h2>COMPLIMENTARY</h2>
+					<p>Your first consultation is on us.</p>
+				</div>
+				<div class="px-8">
+					<h2>TAILORED</h2>
+					<p>Each client is unique, therefore, so is each project.</p>
+				</div>
+				<div class="px-8">
+					<h2>SERVICE</h2>
+					<p>Plan, source and execute.</p>
+				</div>
+			</div>
+		</section>
 	}
 }

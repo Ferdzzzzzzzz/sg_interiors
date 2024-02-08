@@ -186,7 +186,7 @@ func footer() templ.Component {
 			templ_7745c5c3_Var6 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<footer class=\"bg-primary-light text-primary-dark py-20\"><div class=\"max-w-7xl mx-auto grid grid-cols-3\"><div><h2 class=\"font-serif text-xl\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<footer class=\"bg-primary-light text-primary-dark py-20\"><div class=\"max-w-7xl mx-auto grid grid-cols-3 items-center justify-items-center\"><div><h2 class=\"font-serif text-xl\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -241,7 +241,7 @@ func footer() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></li></ul></div><div><img class=\"inline w-56\" src=\"/assets/elements/cta_logo.svg\" alt=\"SG Interiors Logo\"></div></div></footer>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></li></ul></div><div><img class=\"inline w-56\" src=\"/assets/elements/sg_logo.svg\" alt=\"SG Interiors Logo\"></div></div></footer>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

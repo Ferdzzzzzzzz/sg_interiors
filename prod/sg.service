@@ -1,0 +1,21 @@
+[Unit]
+Description=SG Interiors Website
+
+After=network-online.target
+Wants=network-online.target
+
+StartLimitIntervalSec=600
+StartLimitBurst=5
+
+[Service]
+Type=exec
+User=ubuntu
+EnvironmentFile=/home/ubuntu/.env
+WorkingDirectory=/home/ubuntu
+ExecStart=/home/ubuntu/sg_interiors
+
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

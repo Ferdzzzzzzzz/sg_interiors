@@ -1,6 +1,7 @@
 package mux
 
 import (
+	"fmt"
 	"io/fs"
 	"log"
 	"net/http"
@@ -36,7 +37,15 @@ func Init(
 	staticHandler := web.StaticHandler(staticFS, l, web.DefaultStaticCacheSeconds, true)
 	app.HandleStd(http.MethodGet, "/assets/*", staticHandler.ServeHTTP)
 
-	app.Handle(http.MethodGet, "/", s.render(page.Home()))
+	app.Handle(http.MethodGet, "/", func(w http.ResponseWriter, r *http.Request) error {
+		if r.URL.Path != "/" {
+			fmt.Fprint(w, "<h1>Could not find this route</h1>")
+			return nil
+		}
+
+		return page.Home().Render(r.Context(), w)
+	})
+
 	app.Handle(http.MethodGet, "/about", s.render(page.About()))
 	app.Handle(http.MethodGet, "/portfolio", s.render(page.Portfolio()))
 	app.Handle(http.MethodGet, "/gallery", s.render(page.Gallery()))

@@ -7,6 +7,7 @@ module.exports = {
       serif: ['Prata', 'ui-sans-serif']
     },
     colors: {
+      white: "#ffffff",
       'primary-light': "#EFEBE5",
       'primary-md': "#CBC7B7",
       'primary-dark': "#848175",

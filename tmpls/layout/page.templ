@@ -36,22 +36,8 @@ templ Page(title string, description string) {
 	>
 		@Head(title, description)
 		<body>
-			<nav class="max-w-7xl mx-auto border-b-2 border-primary-light py-6">
-				<ul
- 					class="flex justify-between"
-				>
-					for _, nav := range navItems {
-						<li>
-							<a
- 								class="font-serif text-xl text-primary-dark"
- 								href={ templ.SafeURL(nav.Href) }
-							>
-								{ nav.Title }
-							</a>
-						</li>
-					}
-				</ul>
-			</nav>
+			@nav()
+			@mobileNav()
 			{ children... }
 		</body>
 		@footer()
@@ -153,11 +139,127 @@ templ footer() {
 			</div>
 			<div>
 				<img
- 					class="inline w-56"
+ 					class="inline w-40"
  					src="/assets/elements/sg_logo.svg"
  					alt="SG Interiors Logo"
 				/>
 			</div>
 		</div>
 	</footer>
+}
+
+templ nav() {
+	<nav class="max-w-7xl mx-auto lg:border-b-2 border-primary-light py-4 lg:py-6 px-10 lg:px-0">
+		<!-- Mobile Burger -->
+		<button
+ 			id="sidenav-open-btn"
+ 			class="block lg:hidden"
+		>
+			@iconBurger()
+		</button>
+		<!-- Desktop Nav -->
+		<ul
+ 			class="hidden lg:flex lg:justify-between"
+		>
+			for _, nav := range navItems {
+				<li>
+					<a
+ 						class="font-serif text-xl text-primary-dark"
+ 						href={ templ.SafeURL(nav.Href) }
+					>
+						{ nav.Title }
+					</a>
+				</li>
+			}
+		</ul>
+	</nav>
+}
+
+templ mobileNav() {
+	<aside
+ 		id="sidenav"
+ 		data-open="false"
+ 		class="hidden data-[open=true]:block lg:data-[open=true]:hidden fixed inset-0 bg-white z-[99] px-10 py-4"
+	>
+		<div class="flex items-center justify-between p-x py-2 md:py-4">
+			<img
+ 				class="inline w-40"
+ 				src="/assets/elements/sg_logo_long.svg"
+ 				alt="SG Interiors Logo"
+			/>
+			<button
+ 				id="sidenav-close-btn"
+ 				title="Close Menu"
+ 				aria-label="Close Menu"
+			>
+				@iconClose()
+			</button>
+		</div>
+		<ul class="space-y-4 p-x mt-10 text-primary-dark">
+			for _, item := range navItems {
+				<li>
+					<a
+ 						href={ templ.SafeURL(item.Href) }
+ 						class="text-stone-800 hover:text-stone-500 transition-colors font-medium mb-4 flex items-center justify-between text-xl py-1"
+					>
+						{ item.Title }
+						@chevronRight()
+					</a>
+				</li>
+				@divider()
+			}
+		</ul>
+	</aside>
+	<script async src="/assets/scripts/MobileSidenav.js"></script>
+}
+
+templ iconClose() {
+	<svg
+ 		aria-hidden="true"
+ 		xmlns="http://www.w3.org/2000/svg"
+ 		fill="none"
+ 		viewBox="0 0 24 24"
+ 		stroke-width="1.5"
+ 		stroke="currentColor"
+ 		class="block h-8 w-8 fill-none stroke-primary-dark stroke-2"
+	>
+		<path
+ 			stroke-linecap="round"
+ 			stroke-linejoin="round"
+ 			d="M6 18L18 6M6 6l12 12"
+		></path>
+	</svg>
+}
+
+templ iconBurger() {
+	<svg
+ 		aria-hidden="true"
+ 		xmlns="http://www.w3.org/2000/svg"
+ 		class="block h-8 w-8 fill-none stroke-primary-dark stroke-2"
+ 		viewBox="0 0 24 24"
+	>
+		<path
+ 			stroke-linecap="round"
+ 			stroke-linejoin="round"
+ 			d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+		></path>
+	</svg>
+}
+
+templ chevronRight() {
+	<svg
+ 		xmlns="http://www.w3.org/2000/svg"
+ 		fill="none"
+ 		viewBox="0 0 24 24"
+ 		class="w-6 h-6 stroke-primary-dark"
+	>
+		<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+	</svg>
+}
+
+templ divider() {
+	<div
+ 		area-hidden
+ 		class="max-w-7xl mx-auto w-full border-t border-primary-light"
+	></div>
 }

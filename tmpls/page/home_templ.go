@@ -72,7 +72,7 @@ func homeCTA() templ.Component {
 			templ_7745c5c3_Var3 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section><div class=\"text-center\"><img class=\"inline w-80\" src=\"/assets/elements/sg_logo.svg\" alt=\"SG Interiors Logo\"></div><p class=\"font-serif text-primary-dark text-center text-4xl\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section><div class=\"text-center mt-20\"><img class=\"inline w-60\" src=\"/assets/elements/sg_logo.svg\" alt=\"SG Interiors Logo\"></div><p class=\"font-serif text-primary-dark text-center text-4xl mt-10\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -17,10 +17,10 @@ var (
 			Title: "PORTFOLIO",
 			Href:  "/portfolio",
 		},
-		{
-			Title: "GALLERY",
-			Href:  "/gallery",
-		},
+		// {
+		// 	Title: "GALLERY",
+		// 	Href:  "/gallery",
+		// },
 		{
 			Title: "CONTACT",
 			Href:  "/contact",
@@ -79,10 +79,10 @@ var projects = []struct {
 	Title string
 	Href  string
 }{
-	{
-		Title: "Palm Tree",
-		Href:  "",
-	},
+	// {
+	// 	Title: "Palm Tree",
+	// 	Href:  "",
+	// },
 	{
 		Title: "Timeless Tranquility",
 		Href:  "",
@@ -93,63 +93,8 @@ var projects = []struct {
 	},
 }
 
-templ footer() {
-	<footer class="bg-primary-light text-primary-dark py-20">
-		<div class="max-w-7xl mx-auto grid grid-cols-3 items-center justify-items-center">
-			<div>
-				<h2 class="font-serif text-xl">PROJECTS</h2>
-				<ul class="mt-10 space-y-4">
-					for _, project := range projects {
-						<li class="text-xl font-semibold">
-							<a href={ templ.SafeURL(project.Href) }>
-								{ project.Title }
-							</a>
-						</li>
-					}
-				</ul>
-			</div>
-			<div>
-				<ul class="mt-10 space-y-4">
-					<li class="text-xl font-semibold">
-						<a
- 							href=""
-						>
-							<img
- 								class="inline w-8 h-8 mr-2"
- 								aria-hidden
- 								src="/assets/elements/mail_icon.svg"
-							/>
-							steph@sginteriors.co.za
-						</a>
-					</li>
-					<li class="text-xl font-semibold">
-						<a
- 							href=""
- 							class="space-x-2"
-						>
-							<img
- 								class="inline w-8 h-8 mr-2"
- 								aria-hidden
- 								src="/assets/elements/insta_icon.svg"
-							/>
-							sg_interiors_sa
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div>
-				<img
- 					class="inline w-40"
- 					src="/assets/elements/sg_logo.svg"
- 					alt="SG Interiors Logo"
-				/>
-			</div>
-		</div>
-	</footer>
-}
-
 templ nav() {
-	<nav class="max-w-7xl mx-auto lg:border-b-2 border-primary-light py-4 lg:py-6 px-10 lg:px-0">
+	<nav class="max-w-7xl mx-auto lg:border-b-2 border-primary-light py-4 lg:py-6 px-4 xl:px-0">
 		<!-- Mobile Burger -->
 		<button
  			id="sidenav-open-btn"
@@ -262,4 +207,65 @@ templ divider() {
  		area-hidden
  		class="max-w-7xl mx-auto w-full border-t border-primary-light"
 	></div>
+}
+
+templ footer() {
+	<footer class="bg-primary-light text-primary-dark py-10 md:py-20 px-4 md:px-0">
+		<div class="max-w-7xl mx-auto md:grid md:grid-cols-3 items-center justify-items-center">
+			<!-- Mobile Logo -->
+			<img
+ 				class="w-40 block md:hidden"
+ 				src="/assets/elements/sg_logo_long.svg"
+ 				alt="SG Interiors Logo"
+			/>
+			<div>
+				<h2 class="font-serif text-lg md:text-xl mt-10 md:mt-0">PORTFOLIO</h2>
+				<ul class="mt-6 md:mt-10 space-y-4">
+					for _, project := range projects {
+						<li class="text-sm md:text-xl font-semibold">
+							<a href={ templ.SafeURL(project.Href) }>
+								{ project.Title }
+							</a>
+						</li>
+					}
+				</ul>
+			</div>
+			<div>
+				<ul class="mt-10 space-y-4">
+					<li class="text-sm md:text-xl font-semibold">
+						<a
+ 							href="mailto:steph@sginteriors.co.za"
+						>
+							<img
+ 								class="inline w-4 h-4 md:w-8 md:h-8 mr-2"
+ 								aria-hidden
+ 								src="/assets/elements/mail_icon.svg"
+							/>
+							steph@sginteriors.co.za
+						</a>
+					</li>
+					<li class="text-sm md:text-xl font-semibold">
+						<a
+ 							href="https://www.instagram.com/sg_interiors_sa/"
+ 							class="space-x-2"
+						>
+							<img
+ 								class="inline w-4 h-4 md:w-8 md:h-8 mr-2"
+ 								aria-hidden
+ 								src="/assets/elements/insta_icon.svg"
+							/>
+							sg_interiors_sa
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="hidden md:block">
+				<img
+ 					class="inline w-40"
+ 					src="/assets/elements/sg_logo.svg"
+ 					alt="SG Interiors Logo"
+				/>
+			</div>
+		</div>
+	</footer>
 }

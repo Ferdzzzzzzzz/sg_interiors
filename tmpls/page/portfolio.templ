@@ -3,7 +3,42 @@ package page
 import "sg/tmpls/layout"
 
 templ Portfolio() {
-	@layout.Page("Portfolio | SG Interiors Design Studio", "TODO") {
-		<h1>Portfolio</h1>
+	@layout.Page("Portfolio | SG Interiors Design Studio", "") {
+		<section class="text-primary-dark max-w-7xl mx-auto py-10 lg:py-40 px-4 sm:px-10 md:px-20 xl:px-0">
+			<h1 class="text-3xl md:text-5xl font-serif">PORTFOLIO</h1>
+			<div class="grid grid-cols-1 lg:grid-cols-3 mt-8 md:mt-10 gap-10">
+				<div>
+					<a
+ 						href="/renders"
+ 						class=""
+					>
+						<img
+ 							src="https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707670056/ferdz_private/sg_interiors/timeless_tranquility/render_7_uqajrk.jpg"
+ 							class="w-full aspect-video object-cover bg-primary-light"
+						/>
+						<div
+ 							class="text-2xl text-center border border-primary-md px-4 py-2 block mt-4"
+						>
+							RENDERS
+						</div>
+					</a>
+				</div>
+				<div>
+					<a
+ 						href="/boards"
+					>
+						<img
+ 							src="https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707670411/ferdz_private/sg_interiors/boards/Timeless_Tranquility_q8gi9m.png"
+ 							class="w-full aspect-video object-cover bg-primary-light"
+						/>
+						<div
+ 							class="text-2xl text-center border border-primary-md px-4 py-2 block mt-4"
+						>
+							BOARDS
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
 	}
 }

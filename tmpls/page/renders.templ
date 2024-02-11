@@ -1,0 +1,91 @@
+package page
+
+import "sg/tmpls/layout"
+
+templ Renders() {
+	@layout.Page("", "") {
+		<section class="text-primary-dark max-w-7xl mx-auto py-10 lg:py-40 px-4 sm:px-10 md:px-20 xl:px-0">
+			<h1 class="text-3xl md:text-5xl font-serif">RENDERS</h1>
+			<div class="grid grid-cols-1 lg:grid-cols-3 mt-8 md:mt-10 gap-10">
+				<div>
+					<a
+ 						href="/renders/autumnal-harmony"
+ 						class=""
+					>
+						<img
+ 							src="https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707670966/ferdz_private/sg_interiors/autumnal_harmony/Autumnal_Harmony_3_tgxcxl.png"
+ 							class="w-full aspect-video object-cover bg-primary-light"
+						/>
+						<div
+ 							class="text-2xl text-center border border-primary-md px-4 py-2 block mt-4"
+						>
+							AUTUMNAL HARMONY
+						</div>
+					</a>
+				</div>
+				<div>
+					<a
+ 						href="/renders/timeless-tranquility"
+					>
+						<img
+ 							src="https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707670056/ferdz_private/sg_interiors/timeless_tranquility/render_7_uqajrk.jpg"
+ 							class="w-full aspect-video object-cover bg-primary-light"
+						/>
+						<div
+ 							class="text-2xl text-center border border-primary-md px-4 py-2 block mt-4"
+						>
+							TIMELESS TRANQUILITY
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+	}
+}
+
+type RenderPageData struct {
+	Title  string
+	Slug   string
+	Images []string
+}
+
+var RenderPage = struct {
+	AutumnalHarmony     RenderPageData
+	TimelessTranquility RenderPageData
+}{
+	AutumnalHarmony: RenderPageData{
+		Title: "AUTUMNAL HARMONY",
+		Slug:  "autumnal-harmony",
+		Images: []string{
+			"https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707670966/ferdz_private/sg_interiors/autumnal_harmony/Autumnal_Harmony_3_tgxcxl.png",
+			"https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707670966/ferdz_private/sg_interiors/autumnal_harmony/Autumnal_Harmony_1_c6zwub.png",
+			"https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707670965/ferdz_private/sg_interiors/autumnal_harmony/Autumnal_Harmony_2_wt68yr.png",
+		},
+	},
+	TimelessTranquility: RenderPageData{
+		Title: "TIMELESS TRANQUILITY",
+		Slug:  "timeless-tranquility",
+		Images: []string{
+			"https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707670056/ferdz_private/sg_interiors/timeless_tranquility/render_5_yveto7.jpg",
+			"https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707670056/ferdz_private/sg_interiors/timeless_tranquility/render_8_wbhkyf.jpg",
+			"https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707670056/ferdz_private/sg_interiors/timeless_tranquility/render_7_uqajrk.jpg",
+			"https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707670056/ferdz_private/sg_interiors/timeless_tranquility/render_6_lxp6hw.jpg",
+		},
+	},
+}
+
+templ Render(data RenderPageData) {
+	@layout.Page("", "") {
+		<section class="text-primary-dark max-w-7xl mx-auto py-10 lg:py-40 px-4 sm:px-10 md:px-20 xl:px-0">
+			<h1 class="text-3xl md:text-5xl font-serif">{ data.Title }</h1>
+			<div class="grid grid-cols-1 lg:grid-cols-2 mt-8 md:mt-10 gap-10">
+				for _, img := range data.Images {
+					<img
+ 						src={ img }
+ 						class="w-full aspect-video object-cover bg-primary-light"
+					/>
+				}
+			</div>
+		</section>
+	}
+}

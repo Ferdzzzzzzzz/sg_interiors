@@ -3,11 +3,11 @@ package page
 import "sg/tmpls/layout"
 
 templ About() {
-	@layout.Page("About | SG Interiors Design Studio", "TODO") {
-		<section class="text-primary-dark max-w-7xl mx-auto pt-40 grid grid-cols-3 gap-20">
+	@layout.Page("About | SG Interiors Design Studio", "") {
+		<section class="text-primary-dark max-w-7xl mx-auto pt-10 lg:pt-40 lg:grid grid-cols-3 gap-20 px-4 xl:px-0">
 			<div class="col-span-2">
-				<h1 class="text-5xl font-serif">ABOUT ME</h1>
-				<div class="space-y-8 text-2xl mt-10">
+				<h1 class="text-3xl md:text-5xl font-serif">ABOUT ME</h1>
+				<div class="space-y-4 md:space-y-8 text-lg md:text-2xl mt-8 md:mt-10">
 					<p>
 						Hi, I’m Stephanie Grant, the face behind the designs and the heart behind the creativity at SG Interiors.
 					</p>
@@ -25,24 +25,24 @@ templ About() {
 					</p>
 				</div>
 			</div>
-			<div class="bg-primary-light w-full h-full">
+			<div class="bg-primary-light w-full h-full mt-10 md:mt-0">
 				<img
  					class="object-cover h-full w-full"
  					src="https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707417223/ferdz_private/Stephanie_Grant_jkjlw5.jpg"
 				/>
 			</div>
 		</section>
-		<section class="text-primary-dark py-40">
-			<div class={ "max-w-7xl mx-auto grid grid-cols-3 divide-x-2 [&_h2]:text-2xl [&_h2]:font-serif text-center [&_p]:text-xl [&_p]:mt-4 divide-primary-md" }>
-				<div class="px-8">
+		<section class="text-primary-dark py-10 md:py-40 mx-10 md:mx-0">
+			<div class={ "max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x [&_h2]:text-2xl [&_h2]:font-serif text-center [&_p]:text-xl [&_p]:mt-4 divide-primary-md" }>
+				<div class="px-4 py-10 md:py-0">
 					<h2>COMPLIMENTARY</h2>
 					<p>Your first consultation is on us.</p>
 				</div>
-				<div class="px-8">
+				<div class="px-4 py-10 md:py-0">
 					<h2>TAILORED</h2>
 					<p>Each client is unique, therefore, so is each project.</p>
 				</div>
-				<div class="px-8">
+				<div class="px-4 py-10 md:py-0">
 					<h2>SERVICE</h2>
 					<p>Plan, source and execute.</p>
 				</div>

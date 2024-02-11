@@ -72,7 +72,7 @@ func homeCTA() templ.Component {
 			templ_7745c5c3_Var3 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section><div class=\"text-center mt-20\"><img class=\"inline w-60\" src=\"/assets/elements/sg_logo.svg\" alt=\"SG Interiors Logo\"></div><p class=\"font-serif text-primary-dark text-center text-4xl mt-10\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section><div class=\"px-4 lg:px-0\"><div class=\"text-center mt-20\"><img class=\"inline w-40 lg:w-60\" src=\"/assets/elements/sg_logo.svg\" alt=\"SG Interiors Logo\"></div><p class=\"font-serif text-primary-dark text-center text-2xl lg:text-4xl mt-10\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -81,7 +81,7 @@ func homeCTA() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><div class=\"text-center mt-10\"><a href=\"/about\" class=\"text-primary-dark border border-primary-md py-4 px-10 font-bold mt-10 tracking-widest\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><div class=\"text-center mt-10\"><a href=\"/about\" class=\"text-primary-dark border border-primary-md py-2 md:py-4 px-4 md:px-10 font-bold mt-10 tracking-widest text-sm md:text-base\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -90,7 +90,7 @@ func homeCTA() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></div><div class=\"text-center bg-primary-light mt-20 py-10\"><p class=\"font-serif text-primary-dark max-w-prose mx-auto text-2xl\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></div></div><div class=\"text-center bg-primary-light mt-20 py-10 px-4 md:px-0\"><p class=\"font-serif text-primary-dark max-w-prose mx-auto text-xl md:text-2xl\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -132,7 +132,7 @@ func homeCosting() templ.Component {
 			templ_7745c5c3_Var8 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"py-20\"><div class=\"max-w-5xl mx-auto border-t-2 border-primary-dark text-primary-dark text-center\"><h2 class=\"mt-10 font-serif text-4xl\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"py-10 md:py-20\"><div area-hidden class=\"max-w-5xl w-3/4 mx-auto md:w-full border-t border-primary-md\"></div><div class=\"max-w-5xl mx-auto text-primary-dark text-center px-4 md:px-0\"><h2 class=\"mt-10 font-serif text-2xl md:text-4xl\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -141,7 +141,7 @@ func homeCosting() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h2><p class=\"font-sans text-2xl mt-10 font-medium\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h2><p class=\"font-sans text-xl md:text-2xl mt-10 font-medium\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -168,7 +168,7 @@ func homeCosting() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><p class=\"font-sans text-2xl mt-4 font-medium\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><p class=\"font-sans text-xl md:text-2xl mt-4 font-medium\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

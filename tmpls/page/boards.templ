@@ -1,0 +1,28 @@
+package page
+
+import "sg/tmpls/layout"
+
+var boards = []string{
+	"https://res.cloudinary.com/dsvio3cmq/image/upload/f_auto/v1707670411/ferdz_private/sg_interiors/boards/Timeless_Tranquility_q8gi9m.png",
+	"https://res.cloudinary.com/dsvio3cmq/image/upload/f_auto/v1707672193/ferdz_private/sg_interiors/boards/wabi_sabi_ixdghu.png",
+	"https://res.cloudinary.com/dsvio3cmq/image/upload/f_auto/v1707670311/ferdz_private/sg_interiors/boards/Autumnal_Harmony_-_Living_Room_olkwzv.pdf",
+	"https://res.cloudinary.com/dsvio3cmq/image/upload/f_auto/v1707670310/ferdz_private/sg_interiors/boards/Autumnal_Harmony_-_Study_m7chbz.pdf",
+	"https://res.cloudinary.com/dsvio3cmq/image/upload/f_auto/v1707670310/ferdz_private/sg_interiors/boards/Autumnal_Harmony_-_Kitchen_y3b3fb.pdf",
+	"https://res.cloudinary.com/dsvio3cmq/image/upload/f_auto/v1707670310/ferdz_private/sg_interiors/boards/Autumnal_Harmony_-_Water_Closet_mjyshz.pdf",
+}
+
+templ Boards() {
+	@layout.Page("", "") {
+		<section class="text-primary-dark max-w-7xl mx-auto py-10 lg:py-40 px-4 sm:px-10 md:px-20 xl:px-0">
+			<h1 class="text-3xl md:text-5xl font-serif">BOARDS</h1>
+			<div class="grid grid-cols-1 mt-8 md:mt-10 gap-10">
+				for _, img := range boards {
+					<img
+ 						src={ img }
+ 						class="w-full aspect-video object-cover bg-primary-light"
+					/>
+				}
+			</div>
+		</section>
+	}
+}

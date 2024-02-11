@@ -31,16 +31,34 @@ func Portfolio() templ.Component {
 				templ_7745c5c3_Buffer = templ.GetBuffer()
 				defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<h1>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"text-primary-dark max-w-7xl mx-auto py-10 lg:py-40 px-4 sm:px-10 md:px-20 xl:px-0\"><h1 class=\"text-3xl md:text-5xl font-serif\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Var3 := `Portfolio`
+			templ_7745c5c3_Var3 := `PORTFOLIO`
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var3)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h1>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h1><div class=\"grid grid-cols-1 lg:grid-cols-3 mt-8 md:mt-10 gap-10\"><div><a href=\"/renders\" class=\"\"><img src=\"https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707670056/ferdz_private/sg_interiors/timeless_tranquility/render_7_uqajrk.jpg\" class=\"w-full aspect-video object-cover bg-primary-light\"><div class=\"text-2xl text-center border border-primary-md px-4 py-2 block mt-4\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Var4 := `RENDERS`
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var4)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></a></div><div><a href=\"/boards\"><img src=\"https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707670411/ferdz_private/sg_interiors/boards/Timeless_Tranquility_q8gi9m.png\" class=\"w-full aspect-video object-cover bg-primary-light\"><div class=\"text-2xl text-center border border-primary-md px-4 py-2 block mt-4\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Var5 := `BOARDS`
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var5)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></a></div></div></section>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -49,7 +67,7 @@ func Portfolio() templ.Component {
 			}
 			return templ_7745c5c3_Err
 		})
-		templ_7745c5c3_Err = layout.Page("Portfolio | SG Interiors Design Studio", "TODO").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = layout.Page("Portfolio | SG Interiors Design Studio", "").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

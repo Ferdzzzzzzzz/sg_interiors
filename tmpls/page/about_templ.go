@@ -31,7 +31,7 @@ func About() templ.Component {
 				templ_7745c5c3_Buffer = templ.GetBuffer()
 				defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"text-primary-dark max-w-7xl mx-auto pt-40 grid grid-cols-3 gap-20\"><div class=\"col-span-2\"><h1 class=\"text-5xl font-serif\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"text-primary-dark max-w-7xl mx-auto pt-10 lg:pt-40 lg:grid grid-cols-3 gap-20 px-4 xl:px-0\"><div class=\"col-span-2\"><h1 class=\"text-3xl md:text-5xl font-serif\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -40,7 +40,7 @@ func About() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h1><div class=\"space-y-8 text-2xl mt-10\"><p>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h1><div class=\"space-y-4 md:space-y-8 text-lg md:text-2xl mt-8 md:mt-10\"><p>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -85,11 +85,11 @@ func About() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div></div><div class=\"bg-primary-light w-full h-full\"><img class=\"object-cover h-full w-full\" src=\"https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707417223/ferdz_private/Stephanie_Grant_jkjlw5.jpg\"></div></section><section class=\"text-primary-dark py-40\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div></div><div class=\"bg-primary-light w-full h-full mt-10 md:mt-0\"><img class=\"object-cover h-full w-full\" src=\"https://res.cloudinary.com/dsvio3cmq/image/upload/w_1000,q_auto,f_auto/v1707417223/ferdz_private/Stephanie_Grant_jkjlw5.jpg\"></div></section><section class=\"text-primary-dark py-10 md:py-40 mx-10 md:mx-0\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			var templ_7745c5c3_Var9 = []any{"max-w-7xl mx-auto grid grid-cols-3 divide-x-2 [&_h2]:text-2xl [&_h2]:font-serif text-center [&_p]:text-xl [&_p]:mt-4 divide-primary-md"}
+			var templ_7745c5c3_Var9 = []any{"max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x [&_h2]:text-2xl [&_h2]:font-serif text-center [&_p]:text-xl [&_p]:mt-4 divide-primary-md"}
 			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var9...)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
@@ -102,7 +102,7 @@ func About() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><div class=\"px-8\"><h2>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><div class=\"px-4 py-10 md:py-0\"><h2>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -120,7 +120,7 @@ func About() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div><div class=\"px-8\"><h2>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div><div class=\"px-4 py-10 md:py-0\"><h2>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -138,7 +138,7 @@ func About() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div><div class=\"px-8\"><h2>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div><div class=\"px-4 py-10 md:py-0\"><h2>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -165,7 +165,7 @@ func About() templ.Component {
 			}
 			return templ_7745c5c3_Err
 		})
-		templ_7745c5c3_Err = layout.Page("About | SG Interiors Design Studio", "TODO").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = layout.Page("About | SG Interiors Design Studio", "").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

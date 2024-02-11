@@ -39,7 +39,7 @@ func Contact(state ContactForm) templ.Component {
 				templ_7745c5c3_Buffer = templ.GetBuffer()
 				defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"text-primary-dark max-w-7xl mx-auto pt-20 pb-20\"><h1 class=\"text-5xl font-serif\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"text-primary-dark max-w-7xl mx-auto py-10 lg:py-40 px-4 sm:px-10 md:px-20 xl:px-0\"><h1 class=\"text-3xl md:text-5xl font-serif\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -48,7 +48,7 @@ func Contact(state ContactForm) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h1><div class=\"grid grid-cols-2 pt-20\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h1><div class=\"lg:grid grid-cols-2 mt-8 md:mt-10\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -69,7 +69,7 @@ func Contact(state ContactForm) templ.Component {
 			}
 			return templ_7745c5c3_Err
 		})
-		templ_7745c5c3_Err = layout.Page("Contact | SG Interiors Design Studio", "TODO").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = layout.Page("Contact | SG Interiors Design Studio", "").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -93,13 +93,13 @@ func contactForm(state ContactForm) templ.Component {
 			templ_7745c5c3_Var4 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"mt-10 lg:mt-0\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		switch state.State {
 		case form.Initial:
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<form class=\"max-w-lg mx-auto\" method=\"POST\"><fieldset class=\"space-y-4\"><div><input name=\"name\" type=\"text\" value=\"")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<form class=\"w-full lg:max-w-lg mx-auto\" method=\"POST\"><fieldset class=\"space-y-2 lg:space-y-4\"><div><input name=\"name\" type=\"text\" value=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -107,7 +107,7 @@ func contactForm(state ContactForm) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" required placeholder=\"First Name &amp; Surname\" class=\"rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-md py-2 px-4 text-xl block w-full\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" required placeholder=\"First Name &amp; Surname\" class=\"rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-400 py-2 px-4 text-xl block w-full\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -123,7 +123,7 @@ func contactForm(state ContactForm) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" placeholder=\"Email Address\" class=\"rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-md py-2 px-4 text-xl block w-full\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" placeholder=\"Email Address\" class=\"rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-400 py-2 px-4 text-xl block w-full\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -139,7 +139,7 @@ func contactForm(state ContactForm) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" placeholder=\"Message...\" class=\"rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-md py-2 px-4 text-xl block w-full\"></textarea></fieldset><button type=\"submit\" class=\"rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-md py-2 px-4 text-xl block w-full mt-10 font-semibold\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" placeholder=\"Message...\" class=\"rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-400 py-2 px-4 text-xl block w-full\"></textarea></fieldset><button type=\"submit\" class=\"rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-400 py-2 px-4 text-xl block w-2/3 mt-8 lg:mt-10 font-semibold mx-auto\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -246,7 +246,7 @@ func personalInfo() templ.Component {
 			templ_7745c5c3_Var11 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div><ul class=\"space-y-10\"><li class=\"text-xl font-semibold\"><a href=\"\"><img class=\"inline w-8 h-8 mr-2\" aria-hidden src=\"/assets/elements/map_icon.svg\"> ")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div><ul class=\"space-y-4 lg:space-y-10\"><li class=\"text-base md:text-xl font-semibold\"><img class=\"inline w-6 h-6 md:w-8 md:h-8 mr-2\" aria-hidden src=\"/assets/elements/map_icon.svg\"> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -255,7 +255,7 @@ func personalInfo() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></li><li class=\"text-xl font-semibold\"><a href=\"\" class=\"space-x-2\"><img class=\"inline w-8 h-8 mr-2\" aria-hidden src=\"/assets/elements/phone_icon.svg\"> ")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</li><li class=\"text-base md:text-xl font-semibold\"><a href=\"tel:+27784594774\" class=\"space-x-2\"><img class=\"inline w-6 h-6 md:w-8 md:h-8 mr-2\" aria-hidden src=\"/assets/elements/phone_icon.svg\"> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -264,7 +264,7 @@ func personalInfo() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></li><li class=\"text-xl font-semibold\"><a href=\"\"><img class=\"inline w-8 h-8 mr-2\" aria-hidden src=\"/assets/elements/mail_icon.svg\"> ")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></li><li class=\"text-base md:text-xl font-semibold\"><a href=\"mailto:steph@sginteriors.co.za\"><img class=\"inline w-6 h-6 md:w-8 md:h-8 mr-2\" aria-hidden src=\"/assets/elements/mail_icon.svg\"> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -273,7 +273,7 @@ func personalInfo() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></li><li class=\"text-xl font-semibold\"><a href=\"\" class=\"space-x-2\"><img class=\"inline w-8 h-8 mr-2\" aria-hidden src=\"/assets/elements/insta_icon.svg\"> ")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></li><li class=\"text-base md:text-xl font-semibold\"><a href=\"https://www.instagram.com/sg_interiors_sa/\" class=\"space-x-2\"><img class=\"inline w-6 h-6 md:w-8 md:h-8 mr-2\" aria-hidden src=\"/assets/elements/insta_icon.svg\"> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

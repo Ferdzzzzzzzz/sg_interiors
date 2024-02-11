@@ -11,10 +11,10 @@ type ContactForm struct {
 }
 
 templ Contact(state ContactForm) {
-	@layout.Page("Contact | SG Interiors Design Studio", "TODO") {
-		<section class="text-primary-dark max-w-7xl mx-auto pt-20 pb-20">
-			<h1 class="text-5xl font-serif">CONTACT US</h1>
-			<div class="grid grid-cols-2 pt-20">
+	@layout.Page("Contact | SG Interiors Design Studio", "") {
+		<section class="text-primary-dark max-w-7xl mx-auto py-10 lg:py-40 px-4 sm:px-10 md:px-20 xl:px-0">
+			<h1 class="text-3xl md:text-5xl font-serif">CONTACT US</h1>
+			<div class="lg:grid grid-cols-2 mt-8 md:mt-10">
 				@personalInfo()
 				@contactForm(state)
 			</div>
@@ -23,14 +23,14 @@ templ Contact(state ContactForm) {
 }
 
 templ contactForm(state ContactForm) {
-	<div>
+	<div class="mt-10 lg:mt-0">
 		switch state.State {
 			case form.Initial:
 				<form
- 					class="max-w-lg mx-auto"
+ 					class="w-full lg:max-w-lg mx-auto"
  					method="POST"
 				>
-					<fieldset class="space-y-4">
+					<fieldset class="space-y-2 lg:space-y-4">
 						<div>
 							<input
  								name="name"
@@ -38,7 +38,7 @@ templ contactForm(state ContactForm) {
  								value={ state.Name.Val }
  								required
  								placeholder="First Name &amp; Surname"
- 								class="rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-md py-2 px-4 text-xl block w-full"
+ 								class="rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-400 py-2 px-4 text-xl block w-full"
 							/>
 							@errMsg(state.Name.Err)
 						</div>
@@ -49,7 +49,7 @@ templ contactForm(state ContactForm) {
  								required
  								value={ state.Email.Val }
  								placeholder="Email Address"
- 								class="rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-md py-2 px-4 text-xl block w-full"
+ 								class="rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-400 py-2 px-4 text-xl block w-full"
 							/>
 							@errMsg(state.Email.Err)
 						</div>
@@ -62,13 +62,15 @@ templ contactForm(state ContactForm) {
  							name="msg"
  							value={ state.Msg.Val }
  							placeholder="Message..."
- 							class="rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-md py-2 px-4 text-xl block w-full"
+ 							class="rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-400 py-2 px-4 text-xl block w-full"
 						></textarea>
 					</fieldset>
 					<button
  						type="submit"
- 						class="rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-md py-2 px-4 text-xl block w-full mt-10 font-semibold"
-					>Send Message</button>
+ 						class="rounded-lg bg-primary-light text-primary-dark placeholder:text-primary-400 py-2 px-4 text-xl block w-2/3 mt-8 lg:mt-10 font-semibold mx-auto"
+					>
+						Send Message
+					</button>
 				</form>
 			case form.Error:
 				<p class="text-primary-dark text-2xl">Something went wrong, please email me directly.</p>
@@ -90,51 +92,47 @@ templ errMsg(msg string) {
 
 templ personalInfo() {
 	<div>
-		<ul class="space-y-10">
-			<li class="text-xl font-semibold">
-				<a
- 					href=""
-				>
-					<img
- 						class="inline w-8 h-8 mr-2"
- 						aria-hidden
- 						src="/assets/elements/map_icon.svg"
-					/>
-					Constantia, Cape Town
-				</a>
+		<ul class="space-y-4 lg:space-y-10">
+			<li class="text-base md:text-xl font-semibold">
+				<img
+ 					class="inline w-6 h-6 md:w-8 md:h-8 mr-2"
+ 					aria-hidden
+ 					src="/assets/elements/map_icon.svg"
+				/>
+				Constantia, Cape Town
 			</li>
-			<li class="text-xl font-semibold">
+			<li class="text-base md:text-xl font-semibold">
 				<a
- 					href=""
+ 					href="tel:+27784594774"
  					class="space-x-2"
 				>
 					<img
- 						class="inline w-8 h-8 mr-2"
+ 						class="inline w-6 h-6 md:w-8 md:h-8 mr-2"
  						aria-hidden
  						src="/assets/elements/phone_icon.svg"
 					/>
 					078 459 4774
 				</a>
 			</li>
-			<li class="text-xl font-semibold">
+			<li class="text-base md:text-xl font-semibold">
 				<a
- 					href=""
+ 					href="mailto:steph@sginteriors.co.za"
 				>
 					<img
- 						class="inline w-8 h-8 mr-2"
+ 						class="inline w-6 h-6 md:w-8 md:h-8 mr-2"
  						aria-hidden
  						src="/assets/elements/mail_icon.svg"
 					/>
 					steph@sginteriors.co.za
 				</a>
 			</li>
-			<li class="text-xl font-semibold">
+			<li class="text-base md:text-xl font-semibold">
 				<a
- 					href=""
+ 					href="https://www.instagram.com/sg_interiors_sa/"
  					class="space-x-2"
 				>
 					<img
- 						class="inline w-8 h-8 mr-2"
+ 						class="inline w-6 h-6 md:w-8 md:h-8 mr-2"
  						aria-hidden
  						src="/assets/elements/insta_icon.svg"
 					/>

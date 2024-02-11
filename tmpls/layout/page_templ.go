@@ -124,7 +124,7 @@ func Head(title string, description string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><meta charset=\"UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" href=\"/assets/styles/main.css\"><link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Prata&amp;display=swap\" rel=\"stylesheet\"><link href=\"https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap\" rel=\"stylesheet\"></head>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><meta charset=\"UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" href=\"/assets/styles/main.css\"><link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Prata&amp;display=swap\" rel=\"stylesheet\"><link href=\"https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap\" rel=\"stylesheet\"><link rel=\"icon\" href=\"/assets/elements/favicon.png\"></head>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -145,11 +145,11 @@ var projects = []struct {
 	// },
 	{
 		Title: "Timeless Tranquility",
-		Href:  "",
+		Href:  "/renders/timeless-tranquility",
 	},
 	{
 		Title: "Autumnal Harmony",
-		Href:  "",
+		Href:  "/renders/autumnal-harmony",
 	},
 }
 
